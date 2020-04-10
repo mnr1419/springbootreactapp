@@ -44,11 +44,9 @@ class EmployeeList extends Component {
   }
 }
 EmployeeList.propTypes = {
-  getBacklog: PropTypes.func.isRequired,
+  getEmployees: PropTypes.func.isRequired,
 };
-function mapStateToProps(state) {
-  return {
-    employees: state.employees,
-  };
-}
+const mapStateToProps = (state) => ({
+  employees: state.employees,
+});
 export default connect(mapStateToProps, { getEmployees })(EmployeeList);
