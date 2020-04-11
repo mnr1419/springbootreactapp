@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/spring_ract_redux/static/css/main.5f361e03.chunk.css",
+    "main.js": "/spring_ract_redux/static/js/main.6f59c8a2.chunk.js",
+    "main.js.map": "/spring_ract_redux/static/js/main.6f59c8a2.chunk.js.map",
+    "runtime-main.js": "/spring_ract_redux/static/js/runtime-main.decce709.js",
+    "runtime-main.js.map": "/spring_ract_redux/static/js/runtime-main.decce709.js.map",
+    "static/css/2.de424728.chunk.css": "/spring_ract_redux/static/css/2.de424728.chunk.css",
+    "static/js/2.4e880a4b.chunk.js": "/spring_ract_redux/static/js/2.4e880a4b.chunk.js",
+    "static/js/2.4e880a4b.chunk.js.map": "/spring_ract_redux/static/js/2.4e880a4b.chunk.js.map",
+    "index.html": "/spring_ract_redux/index.html",
+    "precache-manifest.85c0bd18c3480872955b44eb906a317e.js": "/spring_ract_redux/precache-manifest.85c0bd18c3480872955b44eb906a317e.js",
+    "service-worker.js": "/spring_ract_redux/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/spring_ract_redux/static/css/2.de424728.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/spring_ract_redux/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.4e880a4b.chunk.js.LICENSE.txt": "/spring_ract_redux/static/js/2.4e880a4b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.decce709.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.4e880a4b.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.6f59c8a2.chunk.js"
+  ]
+}
