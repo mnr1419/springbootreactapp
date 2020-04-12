@@ -10,6 +10,8 @@ import { Router } from "react-router";
 
 function App() {
   return (
+    // Warning: <BrowserRouter> ignores the history prop. To use a custom history,
+    //use `import { Router }` instead of `import { BrowserRouter as Router }`.
     <Router history={createBrowserHistory()}>
       <div className="App">
         <h3 className="alert alert-warning"> Spring boot and Redux app </h3>
