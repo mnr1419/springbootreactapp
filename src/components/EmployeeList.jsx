@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getEmployees } from "../actions/employeeactions";
+import {
+  getEmployees,
+  deleteEmployee,
+  editEmployee,
+} from "../actions/employeeactions";
 class EmployeeList extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   //this.deleteProduct = this.deleteProduct.bind(this);
-  //   //this.editProduct = this.editProduct.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+    this.deleteEmployee = this.deleteEmployee.bind(this);
+    this.editEmployeeMethod = this.editEmployeeMethod.bind(this);
+  }
+  deleteEmployee(id) {
+    this.props.deleteEmployee(id, this.props.history);
+  }
+  editEmployeeMethod(empId) {
+    //console.log(empId);
+    this.props.editEmployee(empId, this.props.history);
+    // this.props.history.push("/editemployee");
+  }
   componentDidMount() {
     this.props.getEmployees();
   }
@@ -34,7 +46,15 @@ class EmployeeList extends Component {
                 <td>{emp.empName}</td>
                 <td>{emp.salary}</td>
                 <td>{emp.empAddress}</td>
-                <td>Edit|Delete</td>
+                <td>
+                  <button onClick={() => this.editEmployeeMethod(emp.empId)}>
+                    Edit
+                  </button>
+
+                  <button onClick={() => this.deleteEmployee(emp.empId)}>
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -45,8 +65,14 @@ class EmployeeList extends Component {
 }
 EmployeeList.propTypes = {
   getEmployees: PropTypes.func.isRequired,
+  deleteEmployee: PropTypes.func.isRequired,
+  editEmployee: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   employees: state.employees,
 });
-export default connect(mapStateToProps, { getEmployees })(EmployeeList);
+export default connect(mapStateToProps, {
+  getEmployees,
+  deleteEmployee,
+  editEmployee,
+})(EmployeeList);

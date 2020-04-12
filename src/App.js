@@ -1,14 +1,16 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import EmployeeList from "./components/EmployeeList";
 import AddEmployee from "./components/AddEmployee";
 import EditEmployee from "./components/EditEmloyee";
+import { createBrowserHistory } from "history";
+import { Router } from "react-router";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router history={createBrowserHistory()}>
       <div className="App">
         <h3 className="alert alert-warning"> Spring boot and Redux app </h3>
         <br />
@@ -19,9 +21,9 @@ function App() {
         <Route path="/employees" exact component={EmployeeList} />
         <Route path="/" exact component={EmployeeList} />
         <Route path="/addemployee" exact component={AddEmployee} />
-        <Route path="/ediemployee" exact component={EditEmployee} />
+        <Route path="/editemployee" exact component={EditEmployee} />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

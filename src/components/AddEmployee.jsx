@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { addEmployee } from "../actions/employeeactions";
+import PropTypes from "prop-types";
 class AddEmployee extends Component {
   constructor(props) {
     super(props);
@@ -8,6 +10,22 @@ class AddEmployee extends Component {
       salary: "",
       empAddress: "",
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.changeInput = this.changeInput.bind(this);
+  }
+  changeInput(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    const employee = {
+      empName: this.state.empName,
+      salary: this.state.salary,
+      empAddress: this.state.empAddress,
+    };
+    this.props.addEmployee(employee, this.props.history);
   }
   render() {
     return (
@@ -44,9 +62,18 @@ class AddEmployee extends Component {
             value={this.state.empAddress}
             onChange={this.changeInput}
           />
+          <br />
+          <br />
+          <button>Save</button>
         </form>
       </div>
     );
   }
 }
-export default AddEmployee;
+AddEmployee.propTypes = {
+  addEmployee: PropTypes.func.isRequired,
+};
+function mapStateToProps(state) {
+  return { state };
+}
+export default connect(mapStateToProps, { addEmployee })(AddEmployee);
